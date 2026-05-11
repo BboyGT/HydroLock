@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <!-- Camera Preview -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:scaleType="fillCenter" />
+
+    <!-- Success Lottie (hidden by default) -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/success_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:lottie_url="https://assets10.lottiefiles.com/packages/lf20_jbrw3hcz.json"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false" />
+
+    <!-- Dark overlay gradient at bottom -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/gradient_bottom_dark" />
+
+    <!-- Tutorial badge -->
+    <TextView
+        android:id="@+id/tv_tutorial_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="16dp"
+        android:background="@drawable/badge_tutorial"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        android:text="TUTORIAL"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:fontFamily="sans-serif"
+        android:visibility="gone" />
+
+    <!-- Camera guide overlay -->
+    <View
+        android:id="@+id/camera_overlay_guide"
+        android:layout_width="220dp"
+        android:layout_height="320dp"
+        android:layout_gravity="center"
+        android:background="@drawable/camera_guide_frame" />
+
+    <!-- Bottom UI panel -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Target amount -->
+        <TextView
+            android:id="@+id/tv_target_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Drink 250ml"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Verified amount display -->
+        <TextView
+            android:id="@+id/tv_verified_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/accent_green"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Feedback instruction -->
+        <TextView
+            android:id="@+id/tv_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Point camera at your drink"
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Progress bar for verifying -->
+        <ProgressBar
+            android:id="@+id/progress_verifying"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:visibility="gone"
+            android:indeterminate="true"
+            android:progressTint="@color/accent_blue"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Drink Done button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_drink_done"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="I've Finished Drinking"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            app:backgroundTint="@color/accent_blue"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Close button (only shown after success) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_close"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Done"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/accent_green"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Override button -->
+        <TextView
+            android:id="@+id/btn_override"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Can't drink right now"
+            android:textColor="@color/text_muted"
+            android:textSize="13sp"
+            android:paddingVertical="8dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

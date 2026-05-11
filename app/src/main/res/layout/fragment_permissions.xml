@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Permissions"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HydroLock needs these to enforce your hydration goals. Without them, the app can't lock your phone."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:lineSpacingMultiplier="1.4"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Permission cards -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/card_background" android:padding="16dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Draw over apps" android:textColor="@color/white" android:textSize="15sp"
+                    android:fontFamily="sans-serif" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="For the lock overlay" android:textColor="@color/text_muted" android:textSize="12sp" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_overlay"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:text="Enable" android:textSize="12sp" android:textColor="@color/white"
+                app:backgroundTint="@color/accent_blue" app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/card_background" android:padding="16dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Accessibility service" android:textColor="@color/white" android:textSize="15sp"
+                    android:fontFamily="sans-serif" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="To refocus when you navigate away" android:textColor="@color/text_muted" android:textSize="12sp" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_accessibility"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:text="Enable" android:textSize="12sp" android:textColor="@color/white"
+                app:backgroundTint="@color/accent_blue" app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/card_background" android:padding="16dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Usage access" android:textColor="@color/white" android:textSize="15sp"
+                    android:fontFamily="sans-serif" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="To detect your wake/sleep pattern" android:textColor="@color/text_muted" android:textSize="12sp" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_usage_stats"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:text="Enable" android:textSize="12sp" android:textColor="@color/white"
+                app:backgroundTint="@color/accent_blue" app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/card_background" android:padding="16dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Notifications" android:textColor="@color/white" android:textSize="15sp"
+                    android:fontFamily="sans-serif" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="For drink reminders" android:textColor="@color/text_muted" android:textSize="12sp" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_notifications"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:text="Allow" android:textSize="12sp" android:textColor="@color/white"
+                app:backgroundTint="@color/accent_blue" app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/card_background" android:padding="16dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:layout_marginBottom="32dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Camera" android:textColor="@color/white" android:textSize="15sp"
+                    android:fontFamily="sans-serif" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="For drink verification" android:textColor="@color/text_muted" android:textSize="12sp" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_camera"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:text="Allow" android:textSize="12sp" android:textColor="@color/white"
+                app:backgroundTint="@color/accent_blue" app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="All done — Continue"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/accent_blue"
+            app:cornerRadius="12dp" />
+
+    </LinearLayout>
+</ScrollView>

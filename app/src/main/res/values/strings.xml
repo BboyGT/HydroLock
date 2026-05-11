@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HydroLock</string>
+    <string name="accessibility_service_label">HydroLock Enforcement</string>
+    <string name="accessibility_service_description">HydroLock uses accessibility services to keep you on the drink screen until you complete your hydration goal. This is the core of the lock mechanic.</string>
+</resources>

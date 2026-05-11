@@ -1,0 +1,13 @@
+.gradle/
+.kotlin/
+.idea/
+build/
+app/build/
+gradle-temp/
+jdk17/
+local.properties
+*.zip
+*.log
+*.keystore
+*.jks
+.DS_Store

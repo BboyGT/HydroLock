@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/onboarding_nav"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.hydrolock.ui.onboarding.WelcomeFragment"
+        android:label="Welcome">
+        <action
+            android:id="@+id/action_welcome_to_weight"
+            app:destination="@id/weightInputFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/weightInputFragment"
+        android:name="com.hydrolock.ui.onboarding.WeightInputFragment"
+        android:label="Weight">
+        <action
+            android:id="@+id/action_weight_to_intake"
+            app:destination="@id/intakeGoalFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/intakeGoalFragment"
+        android:name="com.hydrolock.ui.onboarding.IntakeGoalFragment"
+        android:label="Goal">
+        <action
+            android:id="@+id/action_intake_to_permissions"
+            app:destination="@id/permissionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/permissionsFragment"
+        android:name="com.hydrolock.ui.onboarding.PermissionsFragment"
+        android:label="Permissions">
+        <action
+            android:id="@+id/action_permissions_to_tutorial"
+            app:destination="@id/tutorialFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="com.hydrolock.ui.onboarding.TutorialFragment"
+        android:label="Tutorial" />
+
+</navigation>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_streak_loss">
+
+    <!-- Particle/destruction animation -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_destruction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:lottie_url="https://assets5.lottiefiles.com/packages/lf20_uwR49r.json"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false" />
+
+    <!-- Center: The streak number (shown first, then destroyed) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_streak_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:textColor="@color/accent_orange"
+            android:textSize="120sp"
+            android:fontFamily="sans-serif"
+            android:lineSpacingMultiplier="1" />
+
+        <TextView
+            android:id="@+id/tv_streak_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="days"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif" />
+
+    </LinearLayout>
+
+    <!-- Loss details panel (shown after animation) -->
+    <LinearLayout
+        android:id="@+id/layout_loss_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <!-- Cold headline -->
+        <TextView
+            android:id="@+id/tv_cold_headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 days. Gone."
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Milestone that slipped away -->
+        <TextView
+            android:id="@+id/tv_milestone_lost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/text_muted"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="40dp" />
+
+        <!-- New streak: zero -->
+        <View
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:id="@+id/tv_new_streak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your streak"
+            android:textColor="@color/text_muted"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_new_streak_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="64sp"
+            android:fontFamily="sans-serif" />
+
+        <TextView
+            android:id="@+id/tv_new_streak_sub_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="days"
+            android:textColor="@color/text_muted"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <!-- Acknowledge button - appears after 5s -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_acknowledge"
+        android:layout_width="200dp"
+        android:layout_height="52dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="48dp"
+        android:text="I understand"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:backgroundTint="@color/btn_acknowledge" />
+
+</FrameLayout>
