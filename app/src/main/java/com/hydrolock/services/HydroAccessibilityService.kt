@@ -16,8 +16,11 @@ import com.hydrolock.ui.drink.DrinkSessionActivity
 class HydroAccessibilityService : AccessibilityService() {
 
     companion object {
+        @Volatile
         var isLockActive: Boolean = false
+        @Volatile
         var lockedWindowId: Long = -1L
+        @Volatile
         var lockedTargetMl: Int = 0
     }
 
