@@ -6,6 +6,7 @@ import android.app.Service
 import android.content.Intent
 import android.graphics.PixelFormat
 import android.os.IBinder
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -103,7 +104,9 @@ class OverlayLockService : Service() {
         overlayView?.let {
             try {
                 windowManager.removeView(it)
-            } catch (_: Exception) {}
+            } catch (exception: Exception) {
+                Log.w(TAG, "Failed to remove overlay view", exception)
+            }
             overlayView = null
         }
     }
@@ -126,6 +129,7 @@ class OverlayLockService : Service() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     companion object {
+        private const val TAG = "OverlayLockService"
         const val ACTION_EMERGENCY_OVERRIDE = "com.hydrolock.EMERGENCY_OVERRIDE"
     }
 }
